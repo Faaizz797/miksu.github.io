@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+:root{
+    --main-color:#ff0000;
+    --text-color:#000000;
+    --bg-color:white;
+    --big-font:4.5rem;
+    --h2-font:2.25rem;
+    --p-font:0.9rem;
+}
+*::selection{
+    background: rgba(255, 0, 0, 0.739);
+    color: white;
+}
+body{
+    color: var(--text-color);
+    background: url(img/bg-img2.png);
+    background-size:contain;
+}
+
+/* Navbar */
+nav{
+    background-color: var(--main-color);
+    position: fixed;
+    width: 100%;
+    z-index: 12;
+}
+
+nav .menu{
+    background-color: var(--main-color);
+    max-width: 1450px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  10px;
+   
+
+}
+.logo{
+    cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAFAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAFAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAAABMAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABMAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAAAAJgAAADgAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAAJgAAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAABwAAAA1AAAATAAAAEwAAABMAAAATAAAAEwAAABMAAAATAAAAEwAAAA1AAAAHAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAUwAAAEEAAAAlAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAP///////////////////////////////////////////wAAAP8AAABVAAAASwAAAC8AAAATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAA////////////////////////////////////////////AAAA/wAAAFUAAABSAAAAOAAAABwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAP//////////////////////////////////////////////////////AAAA/wAAAFQAAABBAAAAJQAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAA//////////////////////////////////////////////////////8AAAD/AAAAVQAAAEsAAAAvAAAAEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAP///////////////////////////////////////////////////////////wAAAP8AAABVAAAAUgAAADYAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMAAAA/////////////////////////////////////////////////////////////////wAAAP8AAABUAAAAOAAAABwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAAAP//////////////////////////////////////////////////////////////////////AAAA/wAAAFQAAAA4AAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAAA//////////////////////////////////////////////////////////////////////8AAAD/AAAAUQAAADUAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///////////wAAAP///////////////////////////////////////////////////////////wAAAP8AAABIAAAALAAAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////////AAAA////////////////////////////////////////////////////////////AAAA/wAAADUAAAAcAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///////////wAAAP8AAAD///////////////////////////////////////////8AAAD///////////8AAAD/AAAAHwAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAACAAAAP///////////wAAAP///////////wAAAP///////////wAAAP//////AAAA/wAAABUAAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAA////////////AAAA////////////AAAA////////////AAAA/wAAAP8AAAAPAAAABgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////////8AAAD///////////8AAAD/AAAA/wAAAP8AAAAiAAAABgAAAAMAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP///////////wAAAP8AAABUAAAAOAAAABwAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////AAAA/wAAAFEAAAA1AAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////////8AAAD/AAAARQAAACwAAAATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///////////wAAAP8AAAAvAAAAHAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////AAAA/wAAABUAAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAGAAAABgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////////////////////////////////////////////////////////4Af//+AH///gB///wAP//8AD//+AA///gAH//wAB//8AAf/+AAH//AAB//wAAf/8QAP//8AH///AH///4H////h////4f///+H////h////8///8='), auto; 
+}
+.menu .logo a{
+    margin-left: 7px;
+    margin-right: 5px;
+    font-family: poppins, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 253, 253);
+    font-size: 40px;
+    font-weight: 600;
+}
+.menu ul{
+    display: inline-flex;
+}
+.menu ul li{
+    list-style: none;
+    margin-right: 10px;
+}
+.menu ul li a{
+    
+    color: var(--bg-color);
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px ;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.menu ul li a:hover{
+    background-color: var(--bg-color);
+    color: var(--main-color);
+}
+
+/* Home Design */
+.home{
+    padding: 15rem 17%;
+    width: 100%;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+.home-img img{
+    max-width: 100%;
+    width: 800px;
+    height: auto;
+    animation: floatImage 4s ease-in-out infinite;
+}
+@keyframes floatImage{
+    0%{
+        transform: translateY();
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY();
+    }
+}
+.home-text h1{
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 15px 15px;
+    font-size: var(--big-font);
+    border-radius: 15px;
+    line-height: 67px;
+    width: 51%;
+    font-weight: 600;
+}
+.home-text h2{
+    font-size: var(--h2-font);
+    margin: 1rem 0 2rem;
+}
+.btn{
+    display: inline-block;
+    padding: 7px 15px;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 0.5rem;
+    transition: all .4s ease;
+    font-size: 20px;
+    font-weight: 600;
+}
+.btn:hover{
+    transform: scale(1.2); 
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+/* About Design */
+.about{
+    padding: 17rem 17%;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+.about img{
+    max-width: 80%;
+    width: 480px;
+    height: auto;
+    animation: floatImage 4s ease-in-out infinite;
+}
+.about-text span{
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 30px;
+}
+.about-text h2{
+    margin-top: 20px;
+    font-size: var(--h2-font);
+}
+.about-text p{
+    margin: 0.8rem 0 1.8rem;
+    line-height: 1.7;
+}
+
+/* Menu Section Design */
+.menu{
+    padding: 11rem 17%;
+}
+.heading{
+    text-align: center;
+}
+.heading span{
+    color: var(--bg-color);
+    font-weight: 600;
+    background: var(--main-color);
+    padding: 10px;
+    border-radius: 15px;
+}
+.heading h2{
+    font-size: var(--h2-font);
+    margin-top: 2rem;
+}
+
+.menu-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 3rem;
+    align-items: center;
+}
+.menu span{
+    font-size: 2rem;
+}
+.box{
+    position: relative;
+    margin-top: 4rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(244, 177, 177);
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    border: 4px solid var(--main-color);
+}
+.box-img1 img{
+    width: 100%;
+    border-radius: 13px;
+}
+.box-img2 img{
+    width: 100%;
+    border-radius: 13px;
+}
+.box-img3 img{
+    width: 100%;
+    border-radius: 13px;
+}
+.box:hover{
+    transform: scale(1.1);
+}
+.box h2{
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+.box h3{
+    font-size: 1rem;
+    color: var(--bg-color);
+    font-weight: 500;
+    margin: 4px 0 10px;
+    background: var(--main-color);
+    padding: 8px;
+    border-radius: 6px;
+}
+.box span{
+    font-size: var(--p-font);
+    color: var(--bg-color);
+    font-weight: 600;
+}
+.box .bx{
+    color: var(--bg-color);
+    background: var(--main-color);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 25px;
+    padding: 7px;
+    border-radius: 0 10px 0 0.5rem;
+}
+
+/* Services Design */
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+.services{
+    margin-top: 10rem;
+    padding: 8.7rem 25%;
+}
+.services span{
+    font-size: 2rem;
+}
+.s-box{
+    text-align: justify;
+    text-align: center;
+    padding: 20px 30px;   
+}
+.s-box img{
+    width: 280px;
+    animation: floatImage 4s ease-in-out infinite;
+}
+.s-box h3{
+    font-size: 1.7rem;
+    color: var(--main-color);
+    margin-top: 30px;
+    text-align: center;
+}
+.s-box p{
+    font-size: 1.1rem;
+}
+
+/* contact Design */
+.contact{
+    padding: 3.7rem 3rem;
+}
+.cta-content{
+    padding: 15rem;
+    background: #fd8989;
+    width: 66%;
+    text-align: center;
+    margin: 100px auto;
+    border-radius: 25px;
+}
+.cta-content h2 {
+    font-size: 2rem;
+    color: var(--bg-color);
+    margin-bottom: 1rem;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}   
+.cta-content a{
+    font-size: 1.7rem;
+} 
+
+/* Footer */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 9%;
+    flex-wrap: wrap;
+    background: var(--main-color);
+}
+.footer-text{
+    font-size: 1.2rem;
+    color: var(--bg-color);
+}
+.footer-icontop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+.footer-icontop a:hover{
+    box-shadow: 0 0 1rem var(--bg-color);
+}
+.footer-icontop a i{
+    font-size: 2.2rem;
+    color: var(--main-color);
+}
+
+/* Responsive */
+/* @media (max-width: 834px) {
+    html{
+        font-size: 50%;
+    }
+}
+@media (max-width: 414px) {
+    html{
+        font-size: 50%;
+    }
+} */
