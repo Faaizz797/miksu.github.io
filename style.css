@@ -25,7 +25,10 @@ body{
     background: url(img/bg-img2.png);
     background-size:contain;
 }
-
+.warning{
+    font-size: 90%;
+    text-align: center;
+}
 /* Navbar */
 nav{
     background-color: var(--main-color);
@@ -342,13 +345,36 @@ nav .menu{
 }
 
 /* Responsive */
-/* @media (max-width: 834px) {
-    html{
-        font-size: 50%;
+@media (max-width: 1660px){
+
+    .warning{
+        display: none;
+}
+}
+@media (max-width: 450px) {
+    .warning{
+        display: flex;
+        text-align: center;
+    }
+    main{
+        display: none;
     }
 }
-@media (max-width: 414px) {
-    html{
-        font-size: 50%;
+@media (max-width: 550px) {
+    .warning{
+        display: flex;
+        text-align: center;
     }
-} */
+    main{
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    .warning{
+        display: flex;
+        text-align: center;
+    }
+    main{
+        display: none;
+    }
+}
